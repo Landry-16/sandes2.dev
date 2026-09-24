@@ -1,0 +1,40 @@
+/*
+ * palette.css: raw colour tokens for the candlelit scriptorium.
+ *
+ * These are the only hard-coded colours in the stylesheet layer. Components
+ * never reference them directly: they go through the semantic tokens in
+ * variables.css so the palette can be retuned in one place.
+ *
+ * The WebGL scene cannot read CSS variables every frame, so the same values
+ * are mirrored in lib/sceneConfig.js (PALETTE). Keep the two in sync.
+ */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0f0f0f;   /* near black, the room itself */
+  --bg-secondary: #1a1a2e; /* deep blue-black, night through the window */
+  --bg-accent: #2b1f1f;    /* dark brown, old wood and leather */
+
+  /* Text */
+  --text-primary: #e8dcc8;   /* parchment cream, 13.9:1 on bg-primary */
+  --text-secondary: #a89968; /* aged gold, 6.9:1 on bg-primary */
+  --text-muted: #6b6661;     /* muted grey, 3.4:1: ornaments & large text only */
+
+  /* Gold */
+  --gold-primary: #c9a86b; /* warm gold leaf */
+  --gold-accent: #e8c547;  /* bright gilding, active and hover states */
+
+  /* Light */
+  --light-candle: #ffd89b; /* candle flame */
+  --light-soft: #f4e4c1;   /* soft highlight on vellum */
+
+  /* Accents */
+  --accent-primary: #cf6a43;   /* cinnabar, like rubricated chapter marks: 5.3:1 on bg-primary */
+  --accent-secondary: #8b6f47; /* leather brown */
+
+  /* Channel triplets for rgb()/alpha compositing. */
+  --bg-primary-rgb: 15 15 15;
+  --bg-secondary-rgb: 26 26 46;
+  --bg-accent-rgb: 43 31 31;
+  --gold-primary-rgb: 201 168 107;
+  --light-candle-rgb: 255 216 155;
+}
