@@ -32,6 +32,7 @@ import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
 import { useStore } from '@/lib/store';
 import { useActiveSectionTracker, useScrollTracker } from '@/lib/hooks/useScrollPosition';
 import { useMouseTracker } from '@/lib/hooks/useMouse';
+import { useSectionSnap } from '@/lib/hooks/useSectionSnap';
 import { detectQuality, hasWebGL, prefersReducedMotion } from '@/lib/utils';
 import { sections, site } from '@/lib/content';
 import Navigation from './Navigation';
@@ -146,6 +147,7 @@ export default function Portfolio({ children }) {
   useScrollTracker();
   useMouseTracker();
   useActiveSectionTracker(SECTION_IDS);
+  useSectionSnap(SECTION_IDS);
   const showScene = useDeferredScene();
 
   return (
