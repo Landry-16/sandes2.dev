@@ -15,22 +15,17 @@
   text-decoration: none;
 }
 
+.header {
+  margin: var(--space-4) 0 var(--space-7);
+}
+
 .title {
-  margin: var(--space-5) 0 var(--space-7);
   font-size: var(--fs-h2);
   color: var(--color-text);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
-  gap: var(--space-6);
-}
-
-.item {
-  display: flex;
-}
-
-.item > * {
-  flex: 1;
+.count {
+  margin-top: var(--space-2);
+  font-style: italic;
+  color: var(--color-text-soft);
 }

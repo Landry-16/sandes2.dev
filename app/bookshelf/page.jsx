@@ -1,13 +1,14 @@
 /**
- * /bookshelf: every project in one place.
+ * /bookshelf: every project, as books on a shelf.
  *
- * A first, simple version: a plain grid of all project cards, no 3D. The
- * home page shows only a few projects per category and links here.
+ * The page shell (heading, back link) is server-rendered; the interactive
+ * shelf is the Bookshelf client component. All project text is in the
+ * initial HTML, so the page is fully crawlable.
  */
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { projects } from '@/lib/content';
-import ProjectCard from '@/components/Common/ProjectCard';
+import { bookshelf, projects } from '@/lib/content';
+import Bookshelf from '@/components/Bookshelf/Bookshelf';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -19,20 +20,17 @@ export const metadata = {
 export default function BookshelfPage() {
   return (
     <main className={styles.page}>
-      <Link className={`label ${styles.back}`} href="/#projects">
+      <Link className={`label ${styles.back}`} href={bookshelf.back.href}>
         <ArrowLeft size={14} aria-hidden="true" />
-        Back
+        {bookshelf.back.label}
       </Link>
 
-      <h1 className={styles.title}>Bookshelf</h1>
+      <header className={styles.header}>
+        <h1 className={styles.title}>{bookshelf.title}</h1>
+        <p className={styles.count}>{projects.length} volumes</p>
+      </header>
 
-      <ul role="list" className={styles.grid}>
-        {projects.map((project, index) => (
-          <li key={project.slug} className={styles.item}>
-            <ProjectCard project={project} index={index} />
-          </li>
-        ))}
-      </ul>
+      <Bookshelf />
     </main>
   );
 }
