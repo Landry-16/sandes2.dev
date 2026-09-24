@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * ProjectCard: one "folio" in the reading room.
+ * ProjectCard: one "folio" in My Works.
  *
  * Hover / focus:
  *   - the card tilts toward the pointer in 3D (≤ 6°) using Framer Motion

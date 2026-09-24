@@ -1,5 +1,5 @@
 /**
- * AboutSection: chapter III, "The Scribe".
+ * AboutSection: chapter III.
  *
  * A short biography on the left. The right-hand column is left empty on
  * purpose so the 3D still life (AboutScene: book stack, candle, circling

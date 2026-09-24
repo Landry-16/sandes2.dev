@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * ProjectsSection: chapter II, "The Reading Room".
+ * ProjectsSection: chapter II, "My Works".
  *
  * Shows at most `projectsGrid.limit` projects for the selected filter
  * (All / Academic / Personal). Everything else lives on the bookshelf page,

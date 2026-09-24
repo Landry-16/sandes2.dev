@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * ProjectScene: chapter II, the reading room behind the project cards.
+ * ProjectScene: chapter II, My Works behind the project cards.
  *
  * A slow ring of books orbits behind the grid. It sits deeper in the fog
  * than the hero, so it reads as a backdrop rather than competing with the
