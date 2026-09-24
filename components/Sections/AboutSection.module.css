@@ -1,0 +1,55 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--space-9) var(--gutter);
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--space-8);
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 42rem;
+}
+
+.lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lede);
+  line-height: var(--lh-lede);
+  color: var(--color-text);
+}
+
+.paragraph {
+  max-width: var(--measure);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+/* Reserve room for the 3D still life on wide screens. */
+.stage {
+  min-height: 24rem;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* The still life moves to the corner of the viewport on narrow screens. */
+  .stage {
+    display: none;
+  }
+}
+
