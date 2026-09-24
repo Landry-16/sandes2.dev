@@ -47,7 +47,10 @@ to `projects`:
 }
 ```
 
-The home page shows three projects per category. `/bookshelf` lists them all.
+The home page shows three projects per category. `/bookshelf` shows them all as
+books on shelves; `/bookshelf#slug` opens a specific one. Optional fields:
+`details` (longer text for the bookshelf), `image` (a cover in `public/`) and
+`private` (adds a lock to the note).
 
 ## How the 3D works
 
@@ -85,6 +88,7 @@ components/
   Scenes/     WebGL scene
   Sections/   Hero, Projects, About, Contact
   Common/     ProjectCard, SectionTitle, Reveal
+  Bookshelf/  shelves, spines and the open book
 lib/          content, scene config, store, hooks, utils
 ```
 
