@@ -75,6 +75,9 @@ y = -42   ContactScene  one closed book
   interactive before any 3D runs. Quality tiers (`QUALITY` in
   `lib/sceneConfig.js`) reduce particles, books and effects on small or slow
   devices, and drop further if the frame rate falls.
+- **Section snapping.** `lib/hooks/useSectionSnap.js` adds light resistance
+  between chapters: a fast scroll stops at the next chapter, and a scroll that
+  ends just short of one settles onto it. Scrolling inside a chapter stays free.
 - **Reduced motion.** With `prefers-reduced-motion`, the scene is static and
   the camera cuts between chapters.
 
