@@ -1,0 +1,19 @@
+/* The canvas sits behind all content and never intercepts the pointer:
+   scroll and mouse are read from window listeners (lib/hooks). */
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-canvas);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-ink);
+}
+
+/* "Lighting the room": the scene fades in over the CSS backdrop. */
+.visible {
+  opacity: 1;
+}
+
+.root canvas {
+  display: block;
+}
