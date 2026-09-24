@@ -1,0 +1,144 @@
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--nav-height) + var(--space-6)) var(--gutter) var(--space-9);
+  text-align: center;
+}
+
+/* A soft dark halo behind the text keeps contrast high over bright 3D. */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  max-width: 52rem;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  inset: -12% -18%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(var(--bg-primary-rgb) / 0.55), transparent);
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: var(--gold-primary);
+  animation: rise var(--dur-slow) var(--ease-out) 0.1s both;
+}
+
+.title {
+  font-size: var(--fs-hero);
+  font-weight: 300;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-shadow: 0 0 40px rgb(var(--light-candle-rgb) / 0.25);
+  animation: ink 2.4s var(--ease-ink) both;
+}
+
+.lede {
+  max-width: 44ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lede);
+  line-height: var(--lh-lede);
+  color: var(--color-text);
+  animation: rise var(--dur-slow) var(--ease-out) 0.5s both;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-3);
+  animation: rise var(--dur-slow) var(--ease-out) 0.8s both;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  color: var(--light-candle);
+  text-decoration: none;
+  border: 1px solid var(--color-rule-strong);
+  transition:
+    border-color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease,
+    color var(--dur-base) ease;
+}
+
+.primary:hover {
+  color: var(--light-soft);
+  border-color: var(--gold-accent);
+  box-shadow: var(--shadow-candle);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--color-text-soft);
+  text-decoration: none;
+}
+
+.secondary:hover {
+  color: var(--color-text);
+}
+
+.cue {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-inline: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  color: var(--color-text-soft);
+  text-decoration: none;
+  animation: rise var(--dur-slow) var(--ease-out) 1.4s both;
+}
+
+.cue svg {
+  animation: bob 2.8s ease-in-out infinite;
+}
+
+/* The title is visible from the first frame (it is the LCP element); only
+   its tracking and glow "settle", like ink soaking into vellum. */
+@keyframes ink {
+  from {
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 80px rgb(var(--light-candle-rgb) / 0.6);
+  }
+  to {
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgb(var(--light-candle-rgb) / 0.25);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
