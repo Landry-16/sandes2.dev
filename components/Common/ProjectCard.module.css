@@ -1,0 +1,102 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 100%;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid rgb(var(--gold-primary-rgb) / 0.22);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    border-color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgb(232 197 71 / 0.6);
+  box-shadow: var(--shadow-candle);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--gold-primary);
+}
+
+.category {
+  color: var(--color-eyebrow);
+}
+
+.rule {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-rule-strong);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.summary {
+  color: var(--color-text);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin-top: auto;
+  font-style: italic;
+  color: var(--color-text-soft);
+}
+
+.stack li:not(:last-child)::after {
+  content: '·';
+  margin-left: var(--space-3);
+  color: var(--gold-primary);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--color-text-soft);
+}
+
+/* Blurring what is behind a card is costly over a live WebGL canvas on
+   small GPUs; use a denser solid panel there instead. */
+@media (max-width: 720px) {
+  .card {
+    padding: var(--space-5);
+    background: rgb(var(--bg-accent-rgb) / 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
