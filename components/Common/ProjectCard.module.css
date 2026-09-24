@@ -47,6 +47,21 @@
   color: var(--color-text);
 }
 
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.titleLink:hover {
+  color: var(--light-soft);
+  background-size: 100% 1px;
+}
+
 .summary {
   color: var(--color-text);
 }

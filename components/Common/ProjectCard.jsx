@@ -17,9 +17,12 @@
  * @param {object} props
  * @param {object} props.project  entry from lib/content.js → projects
  * @param {number} props.index    position in the full list (folio number + store id)
+ *
+ * The title links to the project's page on the bookshelf.
  */
 import { m, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
-import { ArrowUpRight, CodeXml, Lock } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, CodeXml, Lock, PenLine } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { toRoman } from '@/lib/utils';
 import styles from './ProjectCard.module.css';
@@ -75,7 +78,9 @@ export default function ProjectCard({ project, index }) {
       <span className={styles.rule} aria-hidden="true" />
 
       <h3 id={titleId} className={styles.title}>
-        {project.title}
+        <Link href={`/bookshelf#${project.slug}`} className={styles.titleLink}>
+          {project.title}
+        </Link>
       </h3>
       <p className={styles.summary}>{project.summary}</p>
 
@@ -99,7 +104,7 @@ export default function ProjectCard({ project, index }) {
           })
         ) : (
           <span className={styles.note}>
-            <Lock size={13} aria-hidden="true" />
+            {project.private ? <Lock size={13} aria-hidden="true" /> : <PenLine size={13} aria-hidden="true" />}
             {project.note}
           </span>
         )}
