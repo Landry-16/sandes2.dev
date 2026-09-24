@@ -1,0 +1,37 @@
+{
+  "name": "sandes-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sandes v2 — an interactive 3D candlelit-scriptorium portfolio built with Next.js and React Three Fiber.",
+  "author": "Sandes",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.19.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.18.2",
+    "gsap": "^3.13.0",
+    "lucide-react": "^1.48.0",
+    "next": "^14.2.35",
+    "postprocessing": "^6.39.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-use-measure": "^2.1.7",
+    "three": "~0.170.0",
+    "zustand": "^4.5.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "leva": "^0.10.1"
+  }
+}
